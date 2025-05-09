@@ -1,5 +1,8 @@
+// Hooks
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+
+// Screens
 import HomeScreen from "../screens/HomeScreen";
 
 const Drawer = createDrawerNavigator();
