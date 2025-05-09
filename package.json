@@ -19,7 +19,9 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-screens": "~4.10.0",
     "react-native-safe-area-context": "5.4.0",
-    "@react-native-masked-view/masked-view": "0.3.2"
+    "@react-native-masked-view/masked-view": "0.3.2",
+    "expo-linear-gradient": "~14.1.4",
+    "react-native-svg": "15.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
