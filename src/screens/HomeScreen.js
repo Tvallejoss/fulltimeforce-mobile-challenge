@@ -6,6 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 // Components
 import Header from "../components/Header";
 import ProfileCard from "../components/ProfileCard";
+import BackgroundPattern from "../components/BackgroundPattern";
 
 // Constants
 import { FILTER_GRADIENTS } from "../constants/gradients";
@@ -42,6 +43,10 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <LinearGradient colors={currentGradient} style={styles.container}>
+      <View style={styles.patternWrapper}>
+        <BackgroundPattern color={"#FFFFFF"} />
+      </View>
+
       <View style={styles.container}>
         <Header navigation={navigation} />
 
@@ -68,5 +73,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
+  },
+  patternWrapper: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: -1,
   },
 });
