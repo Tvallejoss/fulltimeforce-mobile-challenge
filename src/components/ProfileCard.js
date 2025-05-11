@@ -23,6 +23,7 @@ export default function ProfileCard({
   onDislike,
   onSuperLike,
   onLike,
+  actionType,
 }) {
   return (
     <View style={styles.card}>
@@ -32,6 +33,33 @@ export default function ProfileCard({
           style={styles.image}
           resizeMode="cover"
         />
+      )}
+
+      {actionType === "left" && (
+        <View style={styles.overlay}>
+          <Image
+            source={require("../assets/icons/dislike-large.png")}
+            style={styles.overlayIcon}
+          />
+        </View>
+      )}
+
+      {actionType === "superlike" && (
+        <View style={[styles.overlay, styles.overlaySuperLike]}>
+          <Image
+            source={require("../assets/icons/super-like-large.png")}
+            style={styles.overlayIconLarge}
+          />
+        </View>
+      )}
+
+      {actionType === "right" && (
+        <View style={[styles.overlay, styles.overlayRight]}>
+          <Image
+            source={require("../assets/icons/like-large.png")}
+            style={styles.overlayIcon}
+          />
+        </View>
       )}
 
       <View style={styles.filtersWrapper}>
@@ -47,29 +75,26 @@ export default function ProfileCard({
       </View>
 
       <View style={styles.bottomOverlay}>
-        <View style={styles.infoWrapper}>
-          <View style={styles.nameRow}>
-            <Text style={styles.name}>
-              {profile.name}, <Text style={styles.age}>{profile.age}</Text>
-            </Text>
+        <View style={styles.textRow}>
+          <Text style={styles.name}>
+            {profile.name}, <Text style={styles.age}>{profile.age}</Text>
+          </Text>
 
-            <TouchableOpacity style={styles.iconWrapper}>
-              <Image
-                source={require("../assets/icons/warning.png")}
-                style={styles.icon}
-              />
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.location}>{profile.location}</Text>
+          <TouchableOpacity style={styles.iconWrapper}>
+            <Image
+              source={require("../assets/icons/warning.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.actionsContainer}>
-          <ActionButtons
-            onDislike={onDislike}
-            onLike={onLike}
-            onSuperLike={onSuperLike}
-          />
-        </View>
+        <Text style={styles.location}>{profile.location}</Text>
+
+        <ActionButtons
+          onDislike={onDislike}
+          onLike={onLike}
+          onSuperLike={onSuperLike}
+        />
       </View>
     </View>
   );
@@ -99,11 +124,16 @@ const styles = StyleSheet.create({
   },
   bottomOverlay: {
     position: "absolute",
-    bottom: 30,
-    left: 0,
-    right: 0,
+    bottom: 36,
+    left: 24,
+    right: 24,
+  },
+
+  textRow: {
+    flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 20,
+    justifyContent: "space-between",
+    marginBottom: 6,
   },
   infoWrapper: {
     alignItems: "center",
@@ -121,21 +151,23 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
   },
   iconWrapper: {
-    marginLeft: 8,
     backgroundColor: "#FF4470",
-    borderRadius: 20,
-    padding: 4,
+    borderRadius: 12,
+    width: 24,
+    height: 24,
+    justifyContent: "center",
+    alignItems: "center",
   },
+
   icon: {
-    width: 16,
-    height: 16,
+    width: 30,
+    height: 30,
     resizeMode: "contain",
   },
   location: {
     color: "#fff",
     fontSize: 16,
-    marginTop: 4,
-    marginBottom: 12,
+    marginBottom: 20,
   },
   actionsContainer: {
     flexDirection: "row",
@@ -155,5 +187,34 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     resizeMode: "contain",
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(147, 142, 144, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 10,
+    zIndex: 20,
+  },
+
+  overlayIcon: {
+    width: 50,
+    height: 50,
+    resizeMode: "contain",
+  },
+
+  overlayRight: {
+    backgroundColor: "rgba(255, 177, 199, 0.5)",
+  },
+
+  overlaySuperLike: {
+    backgroundColor: "rgba(255, 177, 199, 0.5)",
+  },
+
+  overlayIconLarge: {
+    width: 150,
+    height: 150,
+    resizeMode: "contain",
+    marginTop: -20,
   },
 });
