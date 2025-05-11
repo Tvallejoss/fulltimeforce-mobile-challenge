@@ -56,6 +56,9 @@ export default function HomeScreen({ navigation }) {
             filters={FILTERS}
             activeFilter={activeFilter}
             onFilterChange={setActiveFilter}
+            onDislike={() => console.log("swipe left")}
+            onSuperLike={() => console.log("swipe up")}
+            onLike={() => console.log("swipe right")}
           />
         </View>
       </View>
