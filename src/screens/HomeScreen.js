@@ -1,6 +1,6 @@
 // Hooks
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 // Components
@@ -14,6 +14,8 @@ import { FILTER_GRADIENTS } from "../constants/gradients";
 
 // Fake Data
 import { MOCK_PROFILES } from "../data/mockProfiles";
+
+const { width, height } = Dimensions.get("window");
 
 const FILTERS = [
   {
@@ -109,9 +111,10 @@ const styles = StyleSheet.create({
 
   nextProfileCard: {
     marginTop: -15,
-    width: "75%",
-    height: "100%",
+    width: width * 0.72,
+    height: height * 0.8,
     borderRadius: 30,
     overflow: "hidden",
+    alignSelf: "center",
   },
 });

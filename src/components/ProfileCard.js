@@ -103,7 +103,7 @@ export default function ProfileCard({
 const styles = StyleSheet.create({
   card: {
     width: width * 0.82,
-    height: height * 0.78,
+    height: height * 0.80,
     backgroundColor: "#ccc",
     borderRadius: 30,
     alignSelf: "center",
