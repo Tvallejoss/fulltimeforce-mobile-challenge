@@ -4,13 +4,14 @@ export const MOCK_PROFILES = {
       name: "Sandra Gómez",
       age: 21,
       location: "Surco, Perú",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      image:
+        "https://cdn.discordapp.com/attachments/1095387607409635330/1371692485826449429/faff896ca6910748644aa65711411f7281ff1a3e_1.jpg?ex=68240fad&is=6822be2d&hm=795ad5671c075c5a16695a2678026074cf720dd2195b76099040bea20b206ae7&",
     },
     {
       name: "Micaela Gómez",
       age: 22,
       location: "San Borja, Perú",
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      image: "https://cdn.discordapp.com/attachments/1095387607409635330/1371692716215242762/0a26bb6397002a6d7f8c9595b92efac4d237bc67.jpg?ex=68240fe4&is=6822be64&hm=f652402412942fe2a539bc6190cd7177933017fc42ac4e0a3f58eec3bcfb3137&",
     },
     {
       name: "Sofía Gómez",
