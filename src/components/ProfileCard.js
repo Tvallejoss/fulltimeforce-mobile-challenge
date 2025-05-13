@@ -34,6 +34,7 @@ export default function ProfileCard({
       <View style={styles.card}>
         {profile?.image && (
           <Image
+            key={profile.name + profile.age}
             source={{ uri: profile.image }}
             style={styles.image}
             resizeMode="cover"

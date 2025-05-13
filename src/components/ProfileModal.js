@@ -47,6 +47,7 @@ export default function ProfileModal({
     >
       <View style={styles.modalContainer}>
         <Image
+          key={profile.image}
           source={{ uri: profile.image }}
           style={isMinimized ? styles.fullImage : styles.modalImage}
           resizeMode="cover"
