@@ -89,7 +89,7 @@ export default function ProfileCard({
               style={styles.iconWrapper}
               onPress={() => setModalVisible(true)}
             >
-              <WarningIcon size={22} />
+              <WarningIcon size={35} />
             </TouchableOpacity>
           </View>
 
@@ -117,7 +117,7 @@ export default function ProfileCard({
 
 const styles = StyleSheet.create({
   card: {
-    width: width * 0.82,
+    width: width * 0.85,
     height: height * 0.8,
     backgroundColor: "#ccc",
     borderRadius: 30,
@@ -163,13 +163,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   iconWrapper: {
-    backgroundColor: "#FF4470",
-    borderRadius: 24,
-    width: 36,
-    height: 36,
+    // backgroundColor: "#FF4470",
+    borderRadius: 28, // proporcional al icono
+    width: 44,
+    height: 44,
     justifyContent: "center",
     alignItems: "center",
   },
+
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(147, 142, 144, 0.5)",

@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
   nextProfileCard: {
     marginTop: -15,
-    width: width * 0.72,
+    width: width * 0.78,
     height: height * 0.8,
     borderRadius: 30,
     overflow: "hidden",

@@ -49,7 +49,7 @@ export default function ProfileModal({
         />
 
         <TouchableOpacity style={styles.modalClose} onPress={onClose}>
-          <Ionicons name="close" size={28} color="#fff" />
+          <Ionicons name="close" size={28} color="#000000" />
         </TouchableOpacity>
 
         <View
@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
     top: 50,
     left: 24,
     zIndex: 1000,
-    backgroundColor: "rgba(0,0,0,0.3)",
-    borderRadius: 100,
+    // backgroundColor: "rgba(0,0,0,0.3)",
+    // borderRadius: 100,
     padding: 6,
   },
 
