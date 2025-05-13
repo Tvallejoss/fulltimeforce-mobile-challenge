@@ -110,6 +110,7 @@ export default function ProfileCard({
         onDislike={onDislike}
         onLike={onLike}
         onSuperLike={onSuperLike}
+        activeFilter={activeFilter}
       />
     </>
   );
@@ -147,24 +148,28 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 6,
+    marginBottom: 0,
   },
   name: {
     color: "#fff",
-    fontSize: 22,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontWeight: "700",
+    fontFamily: "Quicksand_500medium",
   },
   age: {
-    fontWeight: "normal",
+    fontWeight: "700",
+    fontFamily: "Quicksand_500medium",
   },
   location: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 14,
     marginBottom: 20,
+    fontWeight: "400",
+    fontFamily: "MavenPro_700bold",
   },
   iconWrapper: {
     // backgroundColor: "#FF4470",
-    borderRadius: 28, // proporcional al icono
+    borderRadius: 28,
     width: 44,
     height: 44,
     justifyContent: "center",

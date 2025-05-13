@@ -14,6 +14,9 @@ import { Ionicons } from "@expo/vector-icons";
 
 const { height, width } = Dimensions.get("window");
 
+import { LinearGradient } from "expo-linear-gradient";
+import { FILTER_GRADIENTS } from "../constants/gradients";
+
 export default function ProfileModal({
   visible,
   onClose,
@@ -21,6 +24,7 @@ export default function ProfileModal({
   onDislike,
   onLike,
   onSuperLike,
+  activeFilter,
 }) {
   const [isMinimized, setIsMinimized] = useState(false);
 
@@ -79,9 +83,15 @@ export default function ProfileModal({
                 <Text style={styles.interestsTitle}>Intereses</Text>
                 <View style={styles.interestsList}>
                   {interests.map((item, idx) => (
-                    <View key={idx} style={styles.interestPill}>
+                    <LinearGradient
+                      key={idx}
+                      colors={FILTER_GRADIENTS[activeFilter]}
+                      start={{ x: 0, y: 0 }}
+                      end={{ x: 1, y: 0 }}
+                      style={styles.interestPill}
+                    >
                       <Text style={styles.interestText}>{item}</Text>
-                    </View>
+                    </LinearGradient>
                   ))}
                 </View>
               </View>
@@ -133,8 +143,6 @@ const styles = StyleSheet.create({
     top: 50,
     left: 24,
     zIndex: 1000,
-    // backgroundColor: "rgba(0,0,0,0.3)",
-    // borderRadius: 100,
     padding: 6,
   },
 
@@ -179,8 +187,9 @@ const styles = StyleSheet.create({
 
   nameExpanded: {
     fontSize: 22,
-    fontWeight: "bold",
-    color: "#000",
+    color: "#333333",
+    fontWeight: "700",
+    fontFamily: "Quicksand_500regular",
   },
 
   age: {
@@ -189,7 +198,9 @@ const styles = StyleSheet.create({
 
   locationExpanded: {
     fontSize: 16,
-    color: "#666",
+    color: "#333333",
+    fontWeight: "400",
+    fontFamily: "MavenPro_700bold",
   },
 
   interests: {
@@ -198,10 +209,11 @@ const styles = StyleSheet.create({
   },
 
   interestsTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 22,
     marginBottom: 8,
-    color: "#000",
+    color: "#333333",
+    fontWeight: "700",
+    fontFamily: "Quicksand_500regular",
   },
 
   interestsList: {
@@ -220,8 +232,9 @@ const styles = StyleSheet.create({
   },
 
   interestText: {
-    color: "#fff",
-    fontWeight: "600",
+    color: "#FFFFFF",
+    fontWeight: "700",
+    fontFamily: "MavenPro_700bold",
     fontSize: 14,
   },
 

@@ -50,8 +50,9 @@ const styles = StyleSheet.create({
   },
   label: {
     marginTop: 6,
-    color: "#fff",
-    fontSize: 12,
-    fontWeight: "600",
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "900",
+    fontFamily: "MavenPro_700Bold",
   },
 });
